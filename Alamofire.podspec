@@ -14,9 +14,16 @@ Pod::Spec.new do |s|
   # s.tvos.deployment_target = '10.0'
   # s.watchos.deployment_target = '3.0'
 
-  s.swift_versions = ['5.0', '5.1']
+  if ENV['ALSource'] || ENV['AllSources']
 
-  s.source_files = 'Source/*.swift'
+    s.swift_versions = ['5.0', '5.1']
+    s.source_files = 'Source/*.swift'
+    s.frameworks = 'CFNetwork'
 
-  s.frameworks = 'CFNetwork'
+  else
+
+    s.vendored_frameworks = "Alamofire-5.0.5/Alamofire.framework"
+    s.frameworks = 'CFNetwork'
+
+  end
 end
