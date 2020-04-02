@@ -19,6 +19,4 @@ Pod::Spec.new do |s|
   s.source_files = 'Source/*.swift'
 
   s.frameworks = 'CFNetwork'
-
-  s.module_map = "Source/Alamofire.modulemap"
 end
